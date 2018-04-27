@@ -1,4 +1,4 @@
-# An Introduction To R {#index}
+# An Introduction To R
  
 <img src="images/Rlogo.png" width="150" />
 

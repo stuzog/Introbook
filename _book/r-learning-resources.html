@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>An Introduction To R</title>
+  <meta name="description" content="A series of tutorials on R, RStudio, and R programming.">
+  <meta name="generator" content="bookdown 0.7.8 and GitBook 2.6.7">
+
+  <meta property="og:title" content="An Introduction To R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A series of tutorials on R, RStudio, and R programming." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="An Introduction To R" />
+  
+  <meta name="twitter:description" content="A series of tutorials on R, RStudio, and R programming." />
+  
+
+<meta name="author" content="Stuart Hertzog">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="the-fundamentals-of-r.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">An Introduction To R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> An Introduction To R</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#contents"><i class="fa fa-check"></i><b>1.1</b> Contents</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>2</b> Setup</a><ul>
+<li class="chapter" data-level="2.1" data-path="setup.html"><a href="setup.html#requirements"><i class="fa fa-check"></i><b>2.1</b> Requirements</a></li>
+<li class="chapter" data-level="2.2" data-path="setup.html"><a href="setup.html#quick-summary"><i class="fa fa-check"></i><b>2.2</b> Quick Summary</a></li>
+<li class="chapter" data-level="2.3" data-path="setup.html"><a href="setup.html#installation-details"><i class="fa fa-check"></i><b>2.3</b> Installation Details</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="setup.html"><a href="setup.html#create-the-project-directory"><i class="fa fa-check"></i><b>2.3.1</b> Create The Project Directory</a></li>
+<li class="chapter" data-level="2.3.2" data-path="setup.html"><a href="setup.html#make-it-an-rstudio-project"><i class="fa fa-check"></i><b>2.3.2</b> Make It An RStudio Project</a></li>
+<li class="chapter" data-level="2.3.3" data-path="setup.html"><a href="setup.html#install-packrat"><i class="fa fa-check"></i><b>2.3.3</b> Install <code>packrat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="setup.html"><a href="setup.html#github-version-control"><i class="fa fa-check"></i><b>2.4</b> GitHub Version Control</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="setup.html"><a href="setup.html#setting-up-git-in-rstudio"><i class="fa fa-check"></i><b>2.4.1</b> Setting Up <code>git</code> In RStudio</a></li>
+<li class="chapter" data-level="2.4.2" data-path="setup.html"><a href="setup.html#using-git-in-rstudio"><i class="fa fa-check"></i><b>2.4.2</b> Using <code>git</code> In RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-for-data-science.html"><a href="r-for-data-science.html"><i class="fa fa-check"></i><b>3</b> R For Data Science</a><ul>
+<li class="chapter" data-level="3.1" data-path="r-for-data-science.html"><a href="r-for-data-science.html#what-is-data-science"><i class="fa fa-check"></i><b>3.1</b> What Is Data Science?</a></li>
+<li class="chapter" data-level="3.2" data-path="r-for-data-science.html"><a href="r-for-data-science.html#what-is-r"><i class="fa fa-check"></i><b>3.2</b> What Is R?</a></li>
+<li class="chapter" data-level="3.3" data-path="r-for-data-science.html"><a href="r-for-data-science.html#installing-r"><i class="fa fa-check"></i><b>3.3</b> Installing R</a></li>
+<li class="chapter" data-level="3.4" data-path="r-for-data-science.html"><a href="r-for-data-science.html#command-line-r"><i class="fa fa-check"></i><b>3.4</b> Command Line R</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="r-for-data-science.html"><a href="r-for-data-science.html#help-and-manuals"><i class="fa fa-check"></i><b>3.4.1</b> Help and Manuals</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="r-for-data-science.html"><a href="r-for-data-science.html#the-r-console-interface"><i class="fa fa-check"></i><b>3.5</b> The R Console Interface</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="r-for-data-science.html"><a href="r-for-data-science.html#access-to-r-help"><i class="fa fa-check"></i><b>3.5.1</b> Access To R Help</a></li>
+<li class="chapter" data-level="3.5.2" data-path="r-for-data-science.html"><a href="r-for-data-science.html#data-file-management"><i class="fa fa-check"></i><b>3.5.2</b> Data File Management</a></li>
+<li class="chapter" data-level="3.5.3" data-path="r-for-data-science.html"><a href="r-for-data-science.html#package-management"><i class="fa fa-check"></i><b>3.5.3</b> Package Management</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="r-for-data-science.html"><a href="r-for-data-science.html#r-packages"><i class="fa fa-check"></i><b>3.6</b> R Packages</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="r-for-data-science.html"><a href="r-for-data-science.html#cran-package-repository"><i class="fa fa-check"></i><b>3.6.1</b> <a href="https://cran.r-project.org/">CRAN Package Repository</a></a></li>
+<li class="chapter" data-level="3.6.2" data-path="r-for-data-science.html"><a href="r-for-data-science.html#installing-cran-r-packages"><i class="fa fa-check"></i><b>3.6.2</b> Installing CRAN R Packages</a></li>
+<li class="chapter" data-level="3.6.3" data-path="r-for-data-science.html"><a href="r-for-data-science.html#installing-packages-from-github"><i class="fa fa-check"></i><b>3.6.3</b> Installing Packages From GitHub</a></li>
+<li class="chapter" data-level="3.6.4" data-path="r-for-data-science.html"><a href="r-for-data-science.html#the-tidyverse"><i class="fa fa-check"></i><b>3.6.4</b> <a href="https://www.tidyverse.org/">The tidyverse</a></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="rstudio-ide.html"><a href="rstudio-ide.html"><i class="fa fa-check"></i><b>4</b> RStudio IDE</a><ul>
+<li class="chapter" data-level="4.1" data-path="rstudio-ide.html"><a href="rstudio-ide.html#the-rstudio-interface"><i class="fa fa-check"></i><b>4.1</b> The RStudio Interface</a></li>
+<li class="chapter" data-level="4.2" data-path="rstudio-ide.html"><a href="rstudio-ide.html#rstudio-projects"><i class="fa fa-check"></i><b>4.2</b> RStudio Projects</a></li>
+<li class="chapter" data-level="4.3" data-path="rstudio-ide.html"><a href="rstudio-ide.html#package-management-in-rstudio"><i class="fa fa-check"></i><b>4.3</b> Package Management In RStudio</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="rstudio-ide.html"><a href="rstudio-ide.html#the-install-packages-gui"><i class="fa fa-check"></i><b>4.3.1</b> The Install Packages GUI</a></li>
+<li class="chapter" data-level="4.3.2" data-path="rstudio-ide.html"><a href="rstudio-ide.html#project-package-management"><i class="fa fa-check"></i><b>4.3.2</b> Project Package Management</a></li>
+<li class="chapter" data-level="4.3.3" data-path="rstudio-ide.html"><a href="rstudio-ide.html#installing-and-using-packrat"><i class="fa fa-check"></i><b>4.3.3</b> Installing And Using <code>packrat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="rstudio-ide.html"><a href="rstudio-ide.html#using-python-in-rstudio"><i class="fa fa-check"></i><b>4.4</b> Using Python In RStudio</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="rstudio-ide.html"><a href="rstudio-ide.html#reticulate"><i class="fa fa-check"></i><b>4.4.1</b> <img src="images/reticulated_python.png" class="small-left" /> <a href="https://rstudio.github.io/reticulate/index.html">reticulate</a></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html"><i class="fa fa-check"></i><b>5</b> The RStudio Ecosystem</a><ul>
+<li class="chapter" data-level="5.1" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#r-notebooks"><i class="fa fa-check"></i><b>5.1</b> R Notebooks</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#creating-an-r-notebook-file"><i class="fa fa-check"></i><b>5.1.1</b> Creating An R Notebook File</a></li>
+<li class="chapter" data-level="5.1.2" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#r-notebook-html-files"><i class="fa fa-check"></i><b>5.1.2</b> R Notebook HTML files</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#rmarkdown"><i class="fa fa-check"></i><b>5.2</b> RMarkdown</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#knitr"><i class="fa fa-check"></i><b>5.2.1</b> knitr</a></li>
+<li class="chapter" data-level="5.2.2" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#pandoc"><i class="fa fa-check"></i><b>5.2.2</b> pandoc</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#shiny"><i class="fa fa-check"></i><b>5.3</b> Shiny</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#shiny-server"><i class="fa fa-check"></i><b>5.3.1</b> Shiny Server</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#bookdown"><i class="fa fa-check"></i><b>5.4</b> bookdown</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#bookdown-installation"><i class="fa fa-check"></i><b>5.4.1</b> <code>bookdown</code> Installation</a></li>
+<li class="chapter" data-level="5.4.2" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#tinytex"><i class="fa fa-check"></i><b>5.4.2</b> <code>tinytex</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#blogdown"><i class="fa fa-check"></i><b>5.5</b> blogdown</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#learning-blogdown"><i class="fa fa-check"></i><b>5.5.1</b> Learning <code>blogdown</code></a></li>
+<li class="chapter" data-level="5.5.2" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#hugo-themes"><i class="fa fa-check"></i><b>5.5.2</b> Hugo Themes</a></li>
+<li class="chapter" data-level="5.5.3" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#blogdown-blogs"><i class="fa fa-check"></i><b>5.5.3</b> <code>blogdown</code> Blogs</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#rstudio-products"><i class="fa fa-check"></i><b>5.6</b> RStudio Products</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#software"><i class="fa fa-check"></i><b>5.6.1</b> Software</a></li>
+<li class="chapter" data-level="5.6.2" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#cloud-services"><i class="fa fa-check"></i><b>5.6.2</b> Cloud Services</a></li>
+<li class="chapter" data-level="5.6.3" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#resources"><i class="fa fa-check"></i><b>5.6.3</b> Resources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html"><i class="fa fa-check"></i><b>6</b> The Fundamentals of R</a><ul>
+<li class="chapter" data-level="6.1" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#four-fundamentals"><i class="fa fa-check"></i><b>6.1</b> Four Fundamentals</a></li>
+<li class="chapter" data-level="6.2" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#basic-maths"><i class="fa fa-check"></i><b>6.2</b> Basic Maths</a></li>
+<li class="chapter" data-level="6.3" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#variables"><i class="fa fa-check"></i><b>6.3</b> Variables</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#assigning-variables"><i class="fa fa-check"></i><b>6.3.1</b> Assigning variables</a></li>
+<li class="chapter" data-level="6.3.2" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#removing-variables"><i class="fa fa-check"></i><b>6.3.2</b> Removing variables</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#data-types"><i class="fa fa-check"></i><b>6.4</b> Data Types</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#numeric-data-types"><i class="fa fa-check"></i><b>6.4.1</b> <code>Numeric</code> data types</a></li>
+<li class="chapter" data-level="6.4.2" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#character-data-types"><i class="fa fa-check"></i><b>6.4.2</b> <code>Character</code> data types</a></li>
+<li class="chapter" data-level="6.4.3" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#date-data-types"><i class="fa fa-check"></i><b>6.4.3</b> <code>Date</code> data types</a></li>
+<li class="chapter" data-level="6.4.4" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#logical-data-types"><i class="fa fa-check"></i><b>6.4.4</b> <code>Logical</code> data types</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#data-structures"><i class="fa fa-check"></i><b>6.5</b> Data Structures</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#vectors"><i class="fa fa-check"></i><b>6.5.1</b> Vectors</a></li>
+<li class="chapter" data-level="6.5.2" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#matrices"><i class="fa fa-check"></i><b>6.5.2</b> Matrices</a></li>
+<li class="chapter" data-level="6.5.3" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#dataframes"><i class="fa fa-check"></i><b>6.5.3</b> Dataframes</a></li>
+<li class="chapter" data-level="6.5.4" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#arrays"><i class="fa fa-check"></i><b>6.5.4</b> Arrays</a></li>
+<li class="chapter" data-level="6.5.5" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#lists"><i class="fa fa-check"></i><b>6.5.5</b> Lists</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="r-learning-resources.html"><a href="r-learning-resources.html"><i class="fa fa-check"></i><b>7</b> R Learning Resources</a><ul>
+<li class="chapter" data-level="7.1" data-path="r-learning-resources.html"><a href="r-learning-resources.html#books-on-r"><i class="fa fa-check"></i><b>7.1</b> Books On R</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="r-learning-resources.html"><a href="r-learning-resources.html#online-r-books"><i class="fa fa-check"></i><b>7.1.1</b> Online R Books</a></li>
+<li class="chapter" data-level="7.1.2" data-path="r-learning-resources.html"><a href="r-learning-resources.html#wikibooks-on-r"><i class="fa fa-check"></i><b>7.1.2</b> WikiBooks on R</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="r-learning-resources.html"><a href="r-learning-resources.html#r-blogs"><i class="fa fa-check"></i><b>7.2</b> R Blogs</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="r-learning-resources.html"><a href="r-learning-resources.html#aggregation-sites"><i class="fa fa-check"></i><b>7.2.1</b> Aggregation Sites</a></li>
+<li class="chapter" data-level="7.2.2" data-path="r-learning-resources.html"><a href="r-learning-resources.html#corporatengo"><i class="fa fa-check"></i><b>7.2.2</b> Corporate/NGO</a></li>
+<li class="chapter" data-level="7.2.3" data-path="r-learning-resources.html"><a href="r-learning-resources.html#personal"><i class="fa fa-check"></i><b>7.2.3</b> Personal</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="r-learning-resources.html"><a href="r-learning-resources.html#r-tutorials"><i class="fa fa-check"></i><b>7.3</b> R Tutorials</a></li>
+<li class="chapter" data-level="7.4" data-path="r-learning-resources.html"><a href="r-learning-resources.html#r-discussion-forums"><i class="fa fa-check"></i><b>7.4</b> R Discussion Forums</a></li>
+<li class="chapter" data-level="7.5" data-path="r-learning-resources.html"><a href="r-learning-resources.html#r-mailing-lists"><i class="fa fa-check"></i><b>7.5</b> R Mailing Lists</a></li>
+<li class="chapter" data-level="7.6" data-path="r-learning-resources.html"><a href="r-learning-resources.html#r-podcasts"><i class="fa fa-check"></i><b>7.6</b> R Podcasts</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction To R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-learning-resources" class="section level1">
+<h1><span class="header-section-number">Part 7</span> R Learning Resources</h1>
+<p>author: “by Stuart Hertzog”
+date: “March–May 2018”</p>
+<blockquote>
+<p>A rich and responsive consellation of print and online information, explanation, guidance, and discussion make up the lively and growing R universe. Help is available at any time — you just have to know where to find it.</p>
+</blockquote>
+<div id="books-on-r" class="section level2">
+<h2><span class="header-section-number">7.1</span> Books On R</h2>
+<ul>
+<li><a href="http://ucanalytics.com/blogs/learn-r-12-books-and-online-resources/">Learn R : 12 Free Books and Online Resources</a></li>
+<li><a href="https://www.manning.com/books/practical-data-science-with-r">Practical Data Science With R</a></li>
+<li><a href="https://www.manning.com/books/r-in-action-second-edition?a_bid=5c2b1e1d&amp;a_aid=RiA2ed">R in Action, Second Edition</a></li>
+<li><a href="https://www.amazon.com/R-Data-Science-Hadley-Wickham/dp/1491910399/ref=as_li_ss_tl?ie=UTF8&amp;qid=1469550189&amp;sr=8-1&amp;keywords=R+for+data+science&amp;linkCode=sl1&amp;tag=devtools-20&amp;linkId=6fe0069f9605cf847ed96c191f4e84dd"><strong>R For Data Science</strong> by Hadley Wickham</a></li>
+<li><a href="https://www.jaredlander.com/r-for-everyone/">R for Everyone by Jared Lander</a></li>
+<li><a href="https://www.informit.com/store/r-in-24-hours-sams-teach-yourself-9780672338489">Teach Yourself R In 24 Hours</a></li>
+<li><a href="https://www.crcpress.com/Chapman--HallCRC-The-R-Series/book-series/CRCTHERSER">The R Series | CRC Press Online</a></li>
+</ul>
+<div id="online-r-books" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> Online R Books</h3>
+<ul>
+<li><a href="https://bookdown.org/yihui/bookdown/">bookdown: Authoring Books With RMarkdown by Yihui Xie</a></li>
+<li><a href="https://bookdown.org/">bookdown.org: R books made with bookdown</a></li>
+<li><a href="http://socviz.co/index.html">Data Visualization by Kieran Healy</a></li>
+<li><a href="https://csgillespie.github.io/efficientR/">Efficient R programming by Colin Gillespie &amp;
+Robin Lovelace</a></li>
+<li><a href="http://happygitwithr.com/">Happy Git and GitHub for the useR by Jenny Bryan &amp; Others</a></li>
+<li><a href="http://r4ds.had.co.nz/"><strong>R For Data Science</strong> by Hadley Wickham</a></li>
+<li><a href="http://r-pkgs.had.co.nz/">R packages by Hadley Wickham</a></li>
+<li><a href="https://www.tidytextmining.com/">Text Mining with R by Julia Silge and David Robinson</a></li>
+</ul>
+</div>
+<div id="wikibooks-on-r" class="section level3">
+<h3><span class="header-section-number">7.1.2</span> WikiBooks on R</h3>
+<ul>
+<li><a href="https://en.wikibooks.org/wiki/Data_Mining_Algorithms_In_R">Data Mining Algorithms In R</a></li>
+<li><a href="https://en.wikibooks.org/wiki/R_Programming">R Programming</a></li>
+<li><a href="https://en.wikibooks.org/wiki/Statistical_Analysis:_an_Introduction_using_R">Statistical Analysis: an Introduction using R</a></li>
+</ul>
+</div>
+</div>
+<div id="r-blogs" class="section level2">
+<h2><span class="header-section-number">7.2</span> R Blogs</h2>
+<div id="aggregation-sites" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> Aggregation Sites</h3>
+<ul>
+<li><a href="https://www.r-bloggers.com/"><strong>R-bloggers | R news and tutorials by R bloggers</strong></a></li>
+<li><a href="https://rweekly.org/">RWeekly.org - Blogs to Learn R from the Community</a></li>
+<li><a href="http://www.statsblogs.com/">Statistics Blogs @ StatsBlogs.com | All About Statistics |</a></li>
+</ul>
+</div>
+<div id="corporatengo" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> Corporate/NGO</h3>
+<ul>
+<li><a href="https://blog.rstudio.org/">RStudio Blog</a></li>
+<li><a href="https://rviews.rstudio.com/">RStudio RViews</a></li>
+<li><a href="http://blog.revolutionanalytics.com/">Revolutions</a></li>
+<li><a href="https://ropensci.org/blog/">rOpenSci Blog</a></li>
+</ul>
+</div>
+<div id="personal" class="section level3">
+<h3><span class="header-section-number">7.2.3</span> Personal</h3>
+<ul>
+<li><a href="https://www.jaredlander.com/">Jared Lander</a></li>
+<li><a href="http://www.johnmyleswhite.com/">John Myles White</a></li>
+<li><a href="http://andrewgelman.com/">Andrew Gelman</a></li>
+<li><a href="https://jehrlinger.wordpress.com/">Learning Slowly</a></li>
+<li><a href="https://trinkerrstuff.wordpress.com/">TRinker’s R Blog</a></li>
+<li><a href="http://ucanalytics.com/blogs/">You Canalytics</a></li>
+</ul>
+</div>
+</div>
+<div id="r-tutorials" class="section level2">
+<h2><span class="header-section-number">7.3</span> R Tutorials</h2>
+<ul>
+<li><a href="https://github.com/qinwf/awesome-R">Awesome-R: A curated list | GitHub</a></li>
+<li><a href="http://socviz.co/index.html">Data Visualization</a></li>
+<li><a href="https://support.rstudio.com/hc/en-us/sections/200271437-Getting-Started">Getting Started | RStudio Support</a></li>
+<li><a href="https://www.r-bloggers.com/how-to-get-started-with-data-science-using-r/">How to get started with Data Science using R | R-bloggers</a></li>
+<li><a href="https://github.com/sjmgarnier/viridis">Implementation of the Matplolib ‘viridis’ color map in R | GitHub</a></li>
+<li><a href="https://www.datacamp.com/">Learn R, Python &amp; Data Science Online | DataCamp</a></li>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages">Quick list of useful R packages | RStudio Support</a></li>
+<li><a href="https://www.statmethods.net/r-tutorial/index.html">Quick R | DataCamp</a></li>
+<li><a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/packageStatus.html">R Package Management Tools</a></li>
+<li><a href="https://www.r-exercises.com/r-courses/">R-Courses | R-Exercises</a></li>
+<li><a href="https://www.r-exercises.com/start-here-to-learn-r/">Start here to learn R! | R-Exercises</a></li>
+<li><a href="http://tryr.codeschool.com/">Try R | Code School</a></li>
+<li><a href="https://www.r-bloggers.com/how-to-learn-r-2/">Tutorials for learning R | R-bloggers</a></li>
+<li><a href="http://stat545.com/index.html">UBC STAT 545</a></li>
+<li><a href="http://mazamascience.com/WorkingWithData/?series=using-r">Using R | Working With Data Series</a></li>
+</ul>
+</div>
+<div id="r-discussion-forums" class="section level2">
+<h2><span class="header-section-number">7.4</span> R Discussion Forums</h2>
+<ul>
+<li><a href="https://stats.stackexchange.com/questions/tagged/r">Cross Validated | Newest ‘r’ Questions</a></li>
+<li><a href="https://stackoverflow.com/questions/tagged/r">Stack Overflow | Newest ‘r’ Questions</a></li>
+<li><a href="http://r.789695.n4.nabble.com/">R Forum | nabble</a></li>
+<li><a href="http://r.stuzog.com/R_Learning_Resources.html">R Learning Resources</a></li>
+<li><a href="http://www.introductoryr.co.uk/R_Resources_for_Beginners.html">R Resources for Beginners</a></li>
+<li><a href="https://stat.ethz.ch/mailman/listinfo/r-help">R-help Info Page</a></li>
+<li><a href="http://r.789695.n4.nabble.com/mailing_list/MailingListOptions.jtp?forum=789696">R-Help Subscription Page</a></li>
+</ul>
+</div>
+<div id="r-mailing-lists" class="section level2">
+<h2><span class="header-section-number">7.5</span> R Mailing Lists</h2>
+<ul>
+<li><a href="https://www.r-project.org/mail.html">R Project Mailing Lists</a></li>
+<li><a href="http://r.789695.n4.nabble.com/">R Mailing List Archive</a></li>
+<li><a href="http://r.789695.n4.nabble.com/template/NamlServlet.jtp?macro=start_registration_page&amp;nextUrl=http%3A%2F%2Fr.789695.n4.nabble.com%2F">R Mailing List Subscription</a></li>
+<li><a href="http://r.789695.n4.nabble.com/R-help-f789696.html">R-help | Mailing List Archive</a></li>
+<li><a href="https://stat.ethz.ch/mailman/listinfo/r-help">R-help | Mailing List Subscription</a></li>
+</ul>
+</div>
+<div id="r-podcasts" class="section level2">
+<h2><span class="header-section-number">7.6</span> R Podcasts</h2>
+<p>If you’re into listening to podcasts, there are many great podcasts about R, Data Science, and Artificial Intelligence. Here are some:</p>
+<ul>
+<li><a href="http://nssdeviations.com/">Not So Standard Deviations</a></li>
+<li><a href="https://www.datacamp.com/community/podcast?tap_a=5644-dce66f&amp;tap_s=10907-287229">DataFramed</a></li>
+<li><a href="https://r-podcast.org/">The R Podcast</a></li>
+<li><a href="https://twimlai.com/">This Week in Machine Learning and AI</a></li>
+<li><a href="https://www.microsoft.com/en-us/research/blog/category/podcast/">The Microsoft Research Podcast</a></li>
+<li><a href="https://warontherocks.com/category/podcasts/bombshell/">Bombshell</a></li>
+<li><a href="https://www.marketplace.org/">Marketplace</a></li>
+<li><a href="http://www.revolutionspodcast.com/">Revolutions</a></li>
+</ul>
+<p>Collected from: <a href="https://www.r-bloggers.com/a-few-podcast-recommendations/">A few podcast recommendations | R-bloggers</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="the-fundamentals-of-r.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/R_Learning_Resources.Rmd",
+"text": "Edit"
+},
+"download": ["Introbook.pdf", "Introbook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

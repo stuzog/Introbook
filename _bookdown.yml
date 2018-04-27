@@ -1,0 +1,14 @@
+book_filename: "Introbook"
+output: bookdown::gitbook
+language:
+  ui:
+    chapter_name: "Part "
+delete_merged_file: true
+rmd_files: ["index.Rmd",
+            "Setup.Rmd",
+            "Part1_R_Data_Science.Rmd",
+            "RStudio.Rmd",
+            "RStudio_Ecosystem.Rmd",
+            "Part2_R_Programming.Rmd",
+            "R_Learning_Resources.Rmd"
+            ]

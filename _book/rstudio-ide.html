@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>An Introduction To R</title>
+  <meta name="description" content="A series of tutorials on R, RStudio, and R programming.">
+  <meta name="generator" content="bookdown 0.7.8 and GitBook 2.6.7">
+
+  <meta property="og:title" content="An Introduction To R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A series of tutorials on R, RStudio, and R programming." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="An Introduction To R" />
+  
+  <meta name="twitter:description" content="A series of tutorials on R, RStudio, and R programming." />
+  
+
+<meta name="author" content="Stuart Hertzog">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="r-for-data-science.html">
+<link rel="next" href="the-rstudio-ecosystem.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">An Introduction To R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> An Introduction To R</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#contents"><i class="fa fa-check"></i><b>1.1</b> Contents</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>2</b> Setup</a><ul>
+<li class="chapter" data-level="2.1" data-path="setup.html"><a href="setup.html#requirements"><i class="fa fa-check"></i><b>2.1</b> Requirements</a></li>
+<li class="chapter" data-level="2.2" data-path="setup.html"><a href="setup.html#quick-summary"><i class="fa fa-check"></i><b>2.2</b> Quick Summary</a></li>
+<li class="chapter" data-level="2.3" data-path="setup.html"><a href="setup.html#installation-details"><i class="fa fa-check"></i><b>2.3</b> Installation Details</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="setup.html"><a href="setup.html#create-the-project-directory"><i class="fa fa-check"></i><b>2.3.1</b> Create The Project Directory</a></li>
+<li class="chapter" data-level="2.3.2" data-path="setup.html"><a href="setup.html#make-it-an-rstudio-project"><i class="fa fa-check"></i><b>2.3.2</b> Make It An RStudio Project</a></li>
+<li class="chapter" data-level="2.3.3" data-path="setup.html"><a href="setup.html#install-packrat"><i class="fa fa-check"></i><b>2.3.3</b> Install <code>packrat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="setup.html"><a href="setup.html#github-version-control"><i class="fa fa-check"></i><b>2.4</b> GitHub Version Control</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="setup.html"><a href="setup.html#setting-up-git-in-rstudio"><i class="fa fa-check"></i><b>2.4.1</b> Setting Up <code>git</code> In RStudio</a></li>
+<li class="chapter" data-level="2.4.2" data-path="setup.html"><a href="setup.html#using-git-in-rstudio"><i class="fa fa-check"></i><b>2.4.2</b> Using <code>git</code> In RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-for-data-science.html"><a href="r-for-data-science.html"><i class="fa fa-check"></i><b>3</b> R For Data Science</a><ul>
+<li class="chapter" data-level="3.1" data-path="r-for-data-science.html"><a href="r-for-data-science.html#what-is-data-science"><i class="fa fa-check"></i><b>3.1</b> What Is Data Science?</a></li>
+<li class="chapter" data-level="3.2" data-path="r-for-data-science.html"><a href="r-for-data-science.html#what-is-r"><i class="fa fa-check"></i><b>3.2</b> What Is R?</a></li>
+<li class="chapter" data-level="3.3" data-path="r-for-data-science.html"><a href="r-for-data-science.html#installing-r"><i class="fa fa-check"></i><b>3.3</b> Installing R</a></li>
+<li class="chapter" data-level="3.4" data-path="r-for-data-science.html"><a href="r-for-data-science.html#command-line-r"><i class="fa fa-check"></i><b>3.4</b> Command Line R</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="r-for-data-science.html"><a href="r-for-data-science.html#help-and-manuals"><i class="fa fa-check"></i><b>3.4.1</b> Help and Manuals</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="r-for-data-science.html"><a href="r-for-data-science.html#the-r-console-interface"><i class="fa fa-check"></i><b>3.5</b> The R Console Interface</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="r-for-data-science.html"><a href="r-for-data-science.html#access-to-r-help"><i class="fa fa-check"></i><b>3.5.1</b> Access To R Help</a></li>
+<li class="chapter" data-level="3.5.2" data-path="r-for-data-science.html"><a href="r-for-data-science.html#data-file-management"><i class="fa fa-check"></i><b>3.5.2</b> Data File Management</a></li>
+<li class="chapter" data-level="3.5.3" data-path="r-for-data-science.html"><a href="r-for-data-science.html#package-management"><i class="fa fa-check"></i><b>3.5.3</b> Package Management</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="r-for-data-science.html"><a href="r-for-data-science.html#r-packages"><i class="fa fa-check"></i><b>3.6</b> R Packages</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="r-for-data-science.html"><a href="r-for-data-science.html#cran-package-repository"><i class="fa fa-check"></i><b>3.6.1</b> <a href="https://cran.r-project.org/">CRAN Package Repository</a></a></li>
+<li class="chapter" data-level="3.6.2" data-path="r-for-data-science.html"><a href="r-for-data-science.html#installing-cran-r-packages"><i class="fa fa-check"></i><b>3.6.2</b> Installing CRAN R Packages</a></li>
+<li class="chapter" data-level="3.6.3" data-path="r-for-data-science.html"><a href="r-for-data-science.html#installing-packages-from-github"><i class="fa fa-check"></i><b>3.6.3</b> Installing Packages From GitHub</a></li>
+<li class="chapter" data-level="3.6.4" data-path="r-for-data-science.html"><a href="r-for-data-science.html#the-tidyverse"><i class="fa fa-check"></i><b>3.6.4</b> <a href="https://www.tidyverse.org/">The tidyverse</a></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="rstudio-ide.html"><a href="rstudio-ide.html"><i class="fa fa-check"></i><b>4</b> RStudio IDE</a><ul>
+<li class="chapter" data-level="4.1" data-path="rstudio-ide.html"><a href="rstudio-ide.html#the-rstudio-interface"><i class="fa fa-check"></i><b>4.1</b> The RStudio Interface</a></li>
+<li class="chapter" data-level="4.2" data-path="rstudio-ide.html"><a href="rstudio-ide.html#rstudio-projects"><i class="fa fa-check"></i><b>4.2</b> RStudio Projects</a></li>
+<li class="chapter" data-level="4.3" data-path="rstudio-ide.html"><a href="rstudio-ide.html#package-management-in-rstudio"><i class="fa fa-check"></i><b>4.3</b> Package Management In RStudio</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="rstudio-ide.html"><a href="rstudio-ide.html#the-install-packages-gui"><i class="fa fa-check"></i><b>4.3.1</b> The Install Packages GUI</a></li>
+<li class="chapter" data-level="4.3.2" data-path="rstudio-ide.html"><a href="rstudio-ide.html#project-package-management"><i class="fa fa-check"></i><b>4.3.2</b> Project Package Management</a></li>
+<li class="chapter" data-level="4.3.3" data-path="rstudio-ide.html"><a href="rstudio-ide.html#installing-and-using-packrat"><i class="fa fa-check"></i><b>4.3.3</b> Installing And Using <code>packrat</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="rstudio-ide.html"><a href="rstudio-ide.html#using-python-in-rstudio"><i class="fa fa-check"></i><b>4.4</b> Using Python In RStudio</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="rstudio-ide.html"><a href="rstudio-ide.html#reticulate"><i class="fa fa-check"></i><b>4.4.1</b> <img src="images/reticulated_python.png" class="small-left" /> <a href="https://rstudio.github.io/reticulate/index.html">reticulate</a></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html"><i class="fa fa-check"></i><b>5</b> The RStudio Ecosystem</a><ul>
+<li class="chapter" data-level="5.1" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#r-notebooks"><i class="fa fa-check"></i><b>5.1</b> R Notebooks</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#creating-an-r-notebook-file"><i class="fa fa-check"></i><b>5.1.1</b> Creating An R Notebook File</a></li>
+<li class="chapter" data-level="5.1.2" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#r-notebook-html-files"><i class="fa fa-check"></i><b>5.1.2</b> R Notebook HTML files</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#rmarkdown"><i class="fa fa-check"></i><b>5.2</b> RMarkdown</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#knitr"><i class="fa fa-check"></i><b>5.2.1</b> knitr</a></li>
+<li class="chapter" data-level="5.2.2" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#pandoc"><i class="fa fa-check"></i><b>5.2.2</b> pandoc</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#shiny"><i class="fa fa-check"></i><b>5.3</b> Shiny</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#shiny-server"><i class="fa fa-check"></i><b>5.3.1</b> Shiny Server</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#bookdown"><i class="fa fa-check"></i><b>5.4</b> bookdown</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#bookdown-installation"><i class="fa fa-check"></i><b>5.4.1</b> <code>bookdown</code> Installation</a></li>
+<li class="chapter" data-level="5.4.2" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#tinytex"><i class="fa fa-check"></i><b>5.4.2</b> <code>tinytex</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#blogdown"><i class="fa fa-check"></i><b>5.5</b> blogdown</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#learning-blogdown"><i class="fa fa-check"></i><b>5.5.1</b> Learning <code>blogdown</code></a></li>
+<li class="chapter" data-level="5.5.2" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#hugo-themes"><i class="fa fa-check"></i><b>5.5.2</b> Hugo Themes</a></li>
+<li class="chapter" data-level="5.5.3" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#blogdown-blogs"><i class="fa fa-check"></i><b>5.5.3</b> <code>blogdown</code> Blogs</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#rstudio-products"><i class="fa fa-check"></i><b>5.6</b> RStudio Products</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#software"><i class="fa fa-check"></i><b>5.6.1</b> Software</a></li>
+<li class="chapter" data-level="5.6.2" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#cloud-services"><i class="fa fa-check"></i><b>5.6.2</b> Cloud Services</a></li>
+<li class="chapter" data-level="5.6.3" data-path="the-rstudio-ecosystem.html"><a href="the-rstudio-ecosystem.html#resources"><i class="fa fa-check"></i><b>5.6.3</b> Resources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html"><i class="fa fa-check"></i><b>6</b> The Fundamentals of R</a><ul>
+<li class="chapter" data-level="6.1" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#four-fundamentals"><i class="fa fa-check"></i><b>6.1</b> Four Fundamentals</a></li>
+<li class="chapter" data-level="6.2" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#basic-maths"><i class="fa fa-check"></i><b>6.2</b> Basic Maths</a></li>
+<li class="chapter" data-level="6.3" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#variables"><i class="fa fa-check"></i><b>6.3</b> Variables</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#assigning-variables"><i class="fa fa-check"></i><b>6.3.1</b> Assigning variables</a></li>
+<li class="chapter" data-level="6.3.2" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#removing-variables"><i class="fa fa-check"></i><b>6.3.2</b> Removing variables</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#data-types"><i class="fa fa-check"></i><b>6.4</b> Data Types</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#numeric-data-types"><i class="fa fa-check"></i><b>6.4.1</b> <code>Numeric</code> data types</a></li>
+<li class="chapter" data-level="6.4.2" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#character-data-types"><i class="fa fa-check"></i><b>6.4.2</b> <code>Character</code> data types</a></li>
+<li class="chapter" data-level="6.4.3" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#date-data-types"><i class="fa fa-check"></i><b>6.4.3</b> <code>Date</code> data types</a></li>
+<li class="chapter" data-level="6.4.4" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#logical-data-types"><i class="fa fa-check"></i><b>6.4.4</b> <code>Logical</code> data types</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#data-structures"><i class="fa fa-check"></i><b>6.5</b> Data Structures</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#vectors"><i class="fa fa-check"></i><b>6.5.1</b> Vectors</a></li>
+<li class="chapter" data-level="6.5.2" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#matrices"><i class="fa fa-check"></i><b>6.5.2</b> Matrices</a></li>
+<li class="chapter" data-level="6.5.3" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#dataframes"><i class="fa fa-check"></i><b>6.5.3</b> Dataframes</a></li>
+<li class="chapter" data-level="6.5.4" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#arrays"><i class="fa fa-check"></i><b>6.5.4</b> Arrays</a></li>
+<li class="chapter" data-level="6.5.5" data-path="the-fundamentals-of-r.html"><a href="the-fundamentals-of-r.html#lists"><i class="fa fa-check"></i><b>6.5.5</b> Lists</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="r-learning-resources.html"><a href="r-learning-resources.html"><i class="fa fa-check"></i><b>7</b> R Learning Resources</a><ul>
+<li class="chapter" data-level="7.1" data-path="r-learning-resources.html"><a href="r-learning-resources.html#books-on-r"><i class="fa fa-check"></i><b>7.1</b> Books On R</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="r-learning-resources.html"><a href="r-learning-resources.html#online-r-books"><i class="fa fa-check"></i><b>7.1.1</b> Online R Books</a></li>
+<li class="chapter" data-level="7.1.2" data-path="r-learning-resources.html"><a href="r-learning-resources.html#wikibooks-on-r"><i class="fa fa-check"></i><b>7.1.2</b> WikiBooks on R</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="r-learning-resources.html"><a href="r-learning-resources.html#r-blogs"><i class="fa fa-check"></i><b>7.2</b> R Blogs</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="r-learning-resources.html"><a href="r-learning-resources.html#aggregation-sites"><i class="fa fa-check"></i><b>7.2.1</b> Aggregation Sites</a></li>
+<li class="chapter" data-level="7.2.2" data-path="r-learning-resources.html"><a href="r-learning-resources.html#corporatengo"><i class="fa fa-check"></i><b>7.2.2</b> Corporate/NGO</a></li>
+<li class="chapter" data-level="7.2.3" data-path="r-learning-resources.html"><a href="r-learning-resources.html#personal"><i class="fa fa-check"></i><b>7.2.3</b> Personal</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="r-learning-resources.html"><a href="r-learning-resources.html#r-tutorials"><i class="fa fa-check"></i><b>7.3</b> R Tutorials</a></li>
+<li class="chapter" data-level="7.4" data-path="r-learning-resources.html"><a href="r-learning-resources.html#r-discussion-forums"><i class="fa fa-check"></i><b>7.4</b> R Discussion Forums</a></li>
+<li class="chapter" data-level="7.5" data-path="r-learning-resources.html"><a href="r-learning-resources.html#r-mailing-lists"><i class="fa fa-check"></i><b>7.5</b> R Mailing Lists</a></li>
+<li class="chapter" data-level="7.6" data-path="r-learning-resources.html"><a href="r-learning-resources.html#r-podcasts"><i class="fa fa-check"></i><b>7.6</b> R Podcasts</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction To R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rstudio-ide" class="section level1">
+<h1><span class="header-section-number">Part 4</span> RStudio IDE</h1>
+<p>author: “by Stuart Hertzog”
+date: “March–May 2018”</p>
+<p><a href="https://www.rstudio.com/products/rstudio"><img src="images/RStudio-Logo-Blue-Gradient.png" style="float: left; margin-right: 1em; margin-bottom: 0.25em;" width=200 /></a> <strong>is a free, open-source, professionally-designed IDE for programming in R</strong> (and other languages including Python and associated Python packages).</p>
+<p><a href="https://en.wikipedia.org/wiki/RStudio">RStudio</a> is available in two free versions:</p>
+<ul>
+<li><a href="https://www.rstudio.com/products/rstudio/#Desktop">RStudio Desktop</a>, run locally as a desktop application. and</li>
+<li><a href="https://www.rstudio.com/products/rstudio/#Server">RStudio Server</a>, which runs on a networked or remote Linux server.</li>
+</ul>
+<p><a href="https://www.rstudio.com/products/rstudio-server-pro/">RStudio Server Pro</a> is a full-service, paid edition for business and government use.</p>
+<p><strong>The advantages of using RStudio include</strong>:</p>
+<ul>
+<li>Free and open source for non-commercial use</li>
+<li>Easy to install on Windows, Mac, and Linux</li>
+<li>Well-designed, multi-pane GUI interface</li>
+<li>Paid, full-service, professional versions</li>
+<li>Git and Subversion versioning support</li>
+<li>Can import data from online sources</li>
+<li>Outputs to HTML, PDF, Word files</li>
+<li>Built-in R package management</li>
+<li>Keyboard shortcuts display</li>
+<li>Active community support</li>
+<li>Tab key code completion</li>
+<li>Ongoing development</li>
+<li>Well-documented</li>
+<li>Code folding</li>
+<li>It’s So Cool</li>
+<li>So is R!</li>
+</ul>
+<p>From the <a href="https://www.rstudio.com/products/rstudio/features/">RStudio web Site</a>:</p>
+<p><strong>An IDE that was built just for R</strong></p>
+<ul>
+<li>Syntax highlighting, code completion, and smart indentation</li>
+<li>Execute R code directly from the source editor</li>
+<li>Quickly jump to function definitions</li>
+</ul>
+<p><strong>Bring your workflow together</strong></p>
+<ul>
+<li>Integrated R help and documentation</li>
+<li>Easily manage multiple working directories using projects</li>
+<li>Workspace browser and data viewer</li>
+</ul>
+<p><strong>Powerful authoring &amp; Debugging</strong></p>
+<ul>
+<li>Interactive debugger to diagnose and fix errors quickly</li>
+<li>Extensive package development tools</li>
+<li>Authoring with Sweave and R Markdown</li>
+</ul>
+<div id="the-rstudio-interface" class="section level2">
+<h2><span class="header-section-number">4.1</span> The RStudio Interface</h2>
+<div class="figure">
+<img src="images/RStudio_console.png" alt="Above: The four-pane default RStudio Console. Pane arrangement can be changed." />
+<p class="caption"><em><strong>Above:</strong> The four-pane default RStudio Console. Pane arrangement can be changed.</em></p>
+</div>
+<p><strong>The RStudio Console interface is flexible, rich, and capable</strong>:</p>
+<ul>
+<li>Tabs in each pane display different aspects of the current project</li>
+<li>Panes can share a column or be raised to fill an entire column</li>
+<li>File and Viewer panes can be zoomed into a larger new window</li>
+<li>Toolbars in each tab allow direct control of content elements</li>
+<li>Console comands are integrated into the running OS and files</li>
+<li>Console display can be changed by selecting a different theme</li>
+<li>Code syntax colors can be changed with another editor theme</li>
+</ul>
+</div>
+<div id="rstudio-projects" class="section level2">
+<h2><span class="header-section-number">4.2</span> RStudio Projects</h2>
+<p><img src="images/RStudio_project_dropdown.png" style="float: left; margin: 0 1em 0.25em 0;" width=200 /></p>
+<p>RStudio advises that <strong>all data files and packages</strong> belonging to a project be contained in a dedicated directory as an <strong>RStudio Project</strong> with an executable <strong><code>.Rproj</code> file</strong>.</p>
+<p><strong>Project management is built into RStudio</strong>. Start a new Project either from the <em>File -&gt; New Project</em> main menu, or from the drop-down <strong>Project menu</strong> at the top right of the RStudio window (left).</p>
+<p><em>New Project…</em> opens a dialogue window that enables a Project to be created in a <em>New</em> or <em>Existing</em> directory, or from a <em>Version Control Repository</em>.</p>
+<p>If an existing Project has unsaved changes, you will be asked to save them.</p>
+<p><em>Open Project…</em> brings up a File dialogue to locate an existing project directory and double-click its <code>.Rproj</code> file.</p>
+<p><em>Open Project in New Session…</em> allows you to create a new Project in a new R session without closing the existing Project R session.</p>
+<p><em>Close Project</em> will close the running R session and after saving any changes.</p>
+<p><strong>Existing RStudio Projects</strong> are listed below these to facilitate switching between active projects. Entries are created when a project is started by RStudio. This list can be emptied by selecting <em>Clear Project List</em>.</p>
+<p><strong>Project Options</strong> lets you set options specific only to the running Project.</p>
+</div>
+<div id="package-management-in-rstudio" class="section level2">
+<h2><span class="header-section-number">4.3</span> Package Management In RStudio</h2>
+<p><strong>Package management is an integral part of the RStudio interface</strong>. The <em>Packages</em> tab in the Files/Viewer pane shows all locally-installed and system packages.</p>
+<p><img src="images/RStudio_packages.png" /></p>
+<p><strong>Clicking the checkbox to the left of each package listing</strong> will load a package’s library into memory and make its functions available. The corresponding installation command will appear immediately in the Console plus any warning messages.</p>
+<p><strong>Packages with checkmarks have already been loaded</strong>. Unclicking a loaded package will unload it unless it is required by RMarkdown, in which case a warning message will inform you of that restriction and the package will remain loaded.</p>
+<p><strong>There are two ways of installing packages</strong> in the RStudio interface:</p>
+<ul>
+<li>Using the <strong><em>Install Packages</em> GUI</strong></li>
+<li>Entering commands in the <strong>Console</strong>.</li>
+</ul>
+<p>The progress of any compilation or installation will be displayed in the Console.</p>
+<div id="the-install-packages-gui" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> The Install Packages GUI</h3>
+<p><img src="images/RStudio_install_package.png" style="float: left; margin-right: 1em; margin-bottom: 0.25em;" width=200 /></p>
+<p><strong>Clicking <em>Install</em> on the Packages tab toolbar</strong> opens an <em>Install Packages</em> dialogue (left) that gives the choice of installing a package directly from CRAN or from a local package archive.</p>
+<p><strong>Multiple packages can be installed</strong> by separating the package names with commas. This installs and makes the packages available for use.</p>
+<p><strong>The <em>Install to Library</em> drop-down menu</strong> allows you to chose the Library where you want the package installed. The <em>default location</em> is selected: this is usually acceptable.</p>
+<p><strong>The location of the R installation on your system</strong> can be found by entering <code>R.home(component = &quot;home&quot;)</code> in the Console. Other component values for the paths to specific directories of the current R installation are <code>&quot;bin&quot;</code>, <code>&quot;doc&quot;</code>, <code>&quot;etc&quot;</code>, <code>&quot;include&quot;</code>, <code>library</code>, <code>&quot;modules&quot;</code> and <code>&quot;share&quot;</code>.</p>
+<p><strong>Clicking the <em>Install dependencies</em> checkbox</strong> will also download and install any other packages required for the requested package(s). This is recommended.</p>
+<p><strong>NOTE: This option will not work when installing from a local archive</strong>. In this case the dependencies must be installed first, or the installation will fail.</p>
+<p>###Installing From The Console</p>
+<p><strong>Packages can be installed and loaded from the Console</strong>. The command sequence is:</p>
+<p><code>install.packages(&quot;PackageName&quot;)</code><br />
+<code>library(PackageName)</code></p>
+<p>The delimiters <code>&quot; &quot;</code> or <code>' '</code> must be used to install a package.</p>
+<p>Most R packages are hosted on CRAN, but some are only available on <a href="https://github.com">GitHub</a> or <a href="https://bitbucket.org">Bitbucket</a>. To install from these locations, the <code>devtools</code> package first must be installed, as <a href="r-for-data-science.html#installing-packages-from-github">described above</a>.</p>
+</div>
+<div id="project-package-management" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Project Package Management</h3>
+<p><strong>RStudio projects are built with different versions of <code>R</code></strong> using the then-current versions of any installed packages. As both <code>R</code> and <code>R packages</code> are constantly being updated, this can cause problems when developing packages or <code>RMarkdown</code> documents.</p>
+<p><strong>There are four solutions to project package management</strong>:</p>
+<ul>
+<li><p>Installing the <a href="https://rstudio.github.io/packrat/"><code>packrat</code></a> package to write package versions in a <code>packrat.lock</code> text file and store the packages in a project <code>packrat</code> directory;</p></li>
+<li><p>Using <a href="https://mran.microsoft.com/timemachine">MRAN</a> (Microsoft R Application Network) to determine dependencies based on the “snapshot” of CRAN that Microsoft has stored on a given day;</p></li>
+<li><p>Installing the <a href="https://cran.r-project.org/web/packages/checkpoint/vignettes/checkpoint.html"><code>checkpoint</code></a> package to choose package versions based on a given day in MRAN history.</p></li>
+</ul>
+<p>For more information, see <a href="https://rviews.rstudio.com/2018/01/18/package-management-for-reproducible-r-code/">Package Management for Reproducible R Code</a></p>
+</div>
+<div id="installing-and-using-packrat" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Installing And Using <code>packrat</code></h3>
+<p><strong>Packrat stores all added packages in its own directory library</strong>, rather than relying on the user R library that is shared across all R sessions.</p>
+<p>The advantages of this are:</p>
+<ul>
+<li><p><strong>Isolation</strong>: Installing a new or updated package for one project does not break other projects, and vice versa;</p></li>
+<li><p><strong>Portability</strong>: Enables moving projects from one computer to another, even across different platforms. (NOTE: this requires installation for each OS as the compiled libraries are not always identical);</p></li>
+<li><p><strong>Reproducibility</strong>: Ensures the correct package versions are assembled where and whenever the project is installed.</p></li>
+</ul>
+<p><strong><code>packrat</code> is integrated into the RStudio environment</strong> so it is easy to install and initiate. The <em>Packages</em> tab in the <em>Files/Viewer</em> window has a <code>packrat</code> item menu. Clicking on this brings up the <strong>Packrat Options</strong> window:</p>
+<p><a name="packrat_options"></a>
+<img src="images/RStudio_packrat_options.png" alt="Above: The Packrat Options window sets up packrat to manage project packages." /></p>
+<p><strong>It’s advisable to select the <em>Automatically snapshot local changes</em> option.</strong></p>
+<p><strong>Clicking <code>OK</code> will download, install, and initiate<code>packrat</code></strong> in exactly the same way the same as issuing the commands from the Console:</p>
+<blockquote>
+<p>install.packages(“packrat”)<br />
+packrat::init()</p>
+</blockquote>
+<p><strong>There also is an option in the <em>New Project</em> window</strong> to create a new project with <code>packrat</code> pre-installed and initiated.</p>
+<p><img src="images/RStudio_packrat_menu.png" style="float: left; margin-right: 1em; margin-bottom: 0.25em;" width=200 /></p>
+<p><strong>Once <code>packrat</code> is up and running</strong> the <em>Packrat</em> link will become a drop-down menu (left), containing the following options:</p>
+<p><em>Check Library Status…</em> – shows if any packages require updating</p>
+<p><em>Clean Unused Packages</em> – removes unneccessary packages. If you want to keep a package from appearing in the Unused list, just add a <code>library(PackageName)</code> call to any .R file in your Project directory.</p>
+<p><em>Export Project Bundle</em> – creates a zipped bundle of your Project in the <code>packrat</code> directory, for transport to another system. The bundle contains application code, a manifest file, an html file, and a <code>packrat</code> folder with a <code>packrat.lock</code> file.</p>
+<p><em>Packrat Options…</em> – brings up the options window. (<a href="#packrat_options">See above</a>)</p>
+<p><strong>For more information see</strong></p>
+<ul>
+<li><a href="https://rstudio.github.io/packrat/">Packrat</a></li>
+<li><a href="https://rstudio.github.io/packrat/commands.html">Packrat Commands</a></li>
+<li><a href="https://rstudio.github.io/packrat/walkthrough.html">Packrat by example</a></li>
+<li><a href="https://rstudio.github.io/packrat/rstudio.html">Using Packrat with RStudio</a></li>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/115003639788-Bundle-Downloads">Bundle Downloads</a></li>
+</ul>
+</div>
+</div>
+<div id="using-python-in-rstudio" class="section level2">
+<h2><span class="header-section-number">4.4</span> Using Python In RStudio</h2>
+<div id="reticulate" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> <img src="images/reticulated_python.png" class="small-left" /> <a href="https://rstudio.github.io/reticulate/index.html">reticulate</a></h3>
+<p>Until recently it has not been possible to easily use Python in RStudio. The newly-developed <a href="https://rstudio.github.io/reticulate/index.html">reticulate</a> package provides a <strong>comprehensive set of tools for interoperability between Python and R</strong> within RStudio.</p>
+<p><strong><a href="https://rstudio.github.io/reticulate/index.html">reticulate</a> includes facilities for</strong>:</p>
+<ul>
+<li><p><strong>Calling Python from R</strong> in a variety of ways including R Markdown, sourcing Python scripts, importing Python modules, and using Python interactively within an R session.</p></li>
+<li><p><strong>Translation between R and Python objects</strong> (for example, between R and Pandas data frames, or between R matrices and NumPy arrays).</p></li>
+<li><p><strong>Flexible binding to different versions of Python</strong> including virtual environments and Conda environments.</p></li>
+</ul>
+<p><strong><a href="https://rstudio.github.io/reticulate/index.html">reticulate</a> embeds a Python session within your R session</strong>, enabling seamless, high-performance interoperability. If you are a Python developer, or an R developer who uses Python for some of your work, or a member of data science team that uses both languages, <a href="https://rstudio.github.io/reticulate/index.html">reticulate</a> can dramatically streamline your workflow.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="r-for-data-science.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-rstudio-ecosystem.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/RStudio.Rmd",
+"text": "Edit"
+},
+"download": ["Introbook.pdf", "Introbook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

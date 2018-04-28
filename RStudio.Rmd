@@ -1,8 +1,5 @@
 # RStudio IDE
 
-author: "by Stuart Hertzog"
-date: "March&ndash;May 2018"
-
 [<img src="images/RStudio-Logo-Blue-Gradient.png" style="float: left; margin-right: 1em; margin-bottom: 0.25em;" width=200 />](https://www.rstudio.com/products/rstudio) **is a free, open-source, professionally-designed IDE for programming in R** (and other languages including Python and associated Python packages).
 
 [RStudio](https://en.wikipedia.org/wiki/RStudio) is available in two free versions:

@@ -1,8 +1,5 @@
 # R For Data Science
 
-author: "by Stuart Hertzog"
-date: "March&ndash;May 2018"
-
 > "In Data Science there's always a human in the loop: someone is understanding the insight, seeing the figure, or benefitting from the conclusion."<br /> --- [_David Robinson, Variance Explained Blog_](http://varianceexplained.org/r/ds-ml-ai/)
 
 That person can be called a __Data Scientist__.

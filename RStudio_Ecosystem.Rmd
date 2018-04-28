@@ -1,9 +1,5 @@
 # The RStudio Ecosystem
 
-_by Stuart Hertzog  
-Victoria, BC March&ndash;May 2018_
-
-
 ![](images/RStudio_full_logo.png)
 
 **The RStudio IDE is the flagship of a comprehensive RStudio ecosystem.**

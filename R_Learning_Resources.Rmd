@@ -1,9 +1,5 @@
 # R Learning Resources
 
-author: "by Stuart Hertzog"
-date: "March&ndash;May 2018"
-
-
 > A rich and responsive consellation of print and online information, explanation, guidance, and discussion make up the lively and growing R universe. Help is available at any time --- you just have to know where to find it.
 
 ## Books On R

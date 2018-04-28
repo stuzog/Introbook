@@ -8,15 +8,20 @@
   max-width: 600px;
   }
 
+.section h1 {
+  margin-top: 0.25em !important;
+  margin-bottom: 0.5em !important;
+  }
+
 .section h2 {
-  padding-top: 64px !important;
-  padding-bottom: 4px !important;
+  margin-top: 1em !important;
+  margin-bottom: 0.5em !important;
   border-bottom: 1pt solid black !important;
   }
 
 .section h3, .section h4  {
-  padding-top: 64px !important;
-  padding-bottom: 4px !important;
+  margin-top: 1em !important;
+  margin-bottom: 0.5em !important;
   border-bottom: none !important;
   }
 
@@ -33,7 +38,7 @@
   }
 
 .figure {
-  padding-top: 0.5em!important;
+  padding-top: 0.5em !important;
   padding-bottom: 0.5em !important;
   }
 

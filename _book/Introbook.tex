@@ -156,10 +156,9 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{index}{%
-\chapter{An Introduction To R}\label{index}}
-
-March--May 2018\_
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
 
 \textbf{This material is my own process of learning the R programming
 language. It can be yours, too.}
@@ -177,36 +176,12 @@ transferred to a Web hosting site by
 
 \textbf{This Series has now become what I hope is a useful tool for
 learning R}. Instructions for setting up and using it are given in
-\href{Setup.html}{How To Set Up This Series}.
+\href{setup.html}{How To Set Up This Series}.
 
 Good luck with your R learning!
 
-\hypertarget{contents}{%
-\section{Contents}\label{contents}}
-
-\href{Setup.html}{Setup}
-
-\textbf{Part 1}
-
-\begin{itemize}
-\tightlist
-\item
-  \href{Part1_R_Data_Science.html}{R For Data Science}
-\item
-  \href{RStudio.html}{The RStudio IDE}
-\item
-  \href{RStudio_Ecosystem.html}{RStudio Ecosystem}
-\end{itemize}
-
-\textbf{Part2}
-
-\begin{itemize}
-\tightlist
-\item
-  \href{Part2_R_Programming.html}{R Fundamentals}
-\end{itemize}
-
-\href{R_Learning_Resources.html}{Learning Resources}
+\emph{Stuart Hertzog,\\
+Victoria, BC Canada}
 
 \hypertarget{setup}{%
 \chapter{Setup}\label{setup}}
@@ -795,8 +770,6 @@ shows everything up-to-date.}}
 \hypertarget{r-for-data-science}{%
 \chapter{R For Data Science}\label{r-for-data-science}}
 
-author: ``by Stuart Hertzog'' date: ``March--May 2018''
-
 \begin{quote}
 ``In Data Science there's always a human in the loop: someone is
 understanding the insight, seeing the figure, or benefitting from the
@@ -1295,7 +1268,8 @@ packages to clean up data prior to analysis. Learning how to use the
 mastering R programming for Data Science.
 
 \hypertarget{ggplot2}{%
-\subsubsection{\texorpdfstring{\href{http://ggplot2.tidyverse.org/}{ggplot2}}{ggplot2}}\label{ggplot2}}
+\subsubsection{\texorpdfstring{
+\href{http://ggplot2.tidyverse.org/}{ggplot2}}{ ggplot2}}\label{ggplot2}}
 
 \textbf{A system for declaratively creating graphics} based on
 \href{vita.had.co.nz/papers/layered-grammar.pdf}{The Grammar of
@@ -1305,7 +1279,8 @@ Graphics}, \texttt{ggplot2} was created by
 primitives to use; it takes care of the details.
 
 \hypertarget{dplyr}{%
-\subsubsection{\texorpdfstring{\href{http://dplyr.tidyverse.org/}{dplyr}}{dplyr}}\label{dplyr}}
+\subsubsection{\texorpdfstring{
+\href{http://dplyr.tidyverse.org/}{dplyr}}{ dplyr}}\label{dplyr}}
 
 \textbf{A grammar of data manipulation}, \texttt{deplyr} provides a
 consistent set of verbs to solve most common data manipulation
@@ -1314,7 +1289,8 @@ with remote databases as with local data frames, using exactly the same
 R code.
 
 \hypertarget{tidyr}{%
-\subsubsection{\texorpdfstring{\href{http://tidyr.tidyverse.org/}{tidyr}}{tidyr}}\label{tidyr}}
+\subsubsection{\texorpdfstring{
+\href{http://tidyr.tidyverse.org/}{tidyr}}{ tidyr}}\label{tidyr}}
 
 \textbf{The goal of tidyr is to create tidy data}. Tidy data describes a
 standard way of storing data so it can be used anywhere in the
@@ -1323,7 +1299,8 @@ data is tidy, youll spend less timing fighting with the tools and more
 time working on analysis.
 
 \hypertarget{readr}{%
-\subsubsection{\texorpdfstring{\href{http://readr.tidyverse.org/}{readr}}{readr}}\label{readr}}
+\subsubsection{\texorpdfstring{
+\href{http://readr.tidyverse.org/}{readr}}{ readr}}\label{readr}}
 
 \textbf{Provides a fast and friendly way to read rectangular data} ---
 comma-separated, tab-separated, fixed-width, and general-delimited
@@ -1332,7 +1309,8 @@ files, as well as tables separated by white space, and web log files.
 failing cleanly if the data changes.
 
 \hypertarget{purrr}{%
-\subsubsection{\texorpdfstring{\href{http://purrr.tidyverse.org/}{purrr}}{purrr}}\label{purrr}}
+\subsubsection{\texorpdfstring{
+\href{http://purrr.tidyverse.org/}{purrr}}{ purrr}}\label{purrr}}
 
 \textbf{A complete toolset for working with functions and vectors},
 \texttt{purrr} functions offer many advantages over the equivalents in
@@ -1341,7 +1319,8 @@ functions replace many \texttt{for} loops with code that is both more
 succinct and easier to read.
 
 \hypertarget{tibble}{%
-\subsubsection{\texorpdfstring{\href{http://tibble.tidyverse.org/}{tibble}}{tibble}}\label{tibble}}
+\subsubsection{\texorpdfstring{
+\href{http://tibble.tidyverse.org/}{tibble}}{ tibble}}\label{tibble}}
 
 \textbf{A modern reimagining of the data.frame}, \emph{tibbles} keep
 what has proven to be effective. \emph{tibbles} are both lazy and surly:
@@ -1350,7 +1329,8 @@ matching), and they complain more (for example when a variable does not
 exist).
 
 \hypertarget{stringr}{%
-\subsubsection{\texorpdfstring{\href{http://stringr.tidyverse.org/}{stringr}}{stringr}}\label{stringr}}
+\subsubsection{\texorpdfstring{
+\href{http://stringr.tidyverse.org/}{stringr}}{ stringr}}\label{stringr}}
 
 \textbf{Designed to make working with strings as easy as possible}.
 \href{http://stringr.tidyverse.org/}{stringr} focusses on the most
@@ -1359,7 +1339,8 @@ on top of \href{https://github.com/gagolews/stringi}{stringi}, which
 provides a comprehensive set covering almost anything you can imagine.
 
 \hypertarget{forcats}{%
-\subsubsection{\texorpdfstring{\href{http://forcats.tidyverse.org/}{forcats}}{forcats}}\label{forcats}}
+\subsubsection{\texorpdfstring{
+\href{http://forcats.tidyverse.org/}{forcats}}{ forcats}}\label{forcats}}
 
 \textbf{A suite of tools to solve problems with factors}. R uses factors
 to handle categorical variables that have a fixed and known set of
@@ -1370,9 +1351,7 @@ create them automatically.
 \hypertarget{rstudio-ide}{%
 \chapter{RStudio IDE}\label{rstudio-ide}}
 
-author: ``by Stuart Hertzog'' date: ``March--May 2018''
-
-\href{https://www.rstudio.com/products/rstudio}{}\textbf{is a free,
+\href{https://www.rstudio.com/products/rstudio}{} \textbf{is a free,
 open-source, professionally-designed IDE for programming in R} (and
 other languages including Python and associated Python packages).
 
@@ -1742,7 +1721,8 @@ bundle contains application code, a manifest file, an html file, and a
 \section{Using Python In RStudio}\label{using-python-in-rstudio}}
 
 \hypertarget{reticulate}{%
-\subsection{\texorpdfstring{\href{https://rstudio.github.io/reticulate/index.html}{reticulate}}{reticulate}}\label{reticulate}}
+\subsection{\texorpdfstring{
+\href{https://rstudio.github.io/reticulate/index.html}{reticulate}}{ reticulate}}\label{reticulate}}
 
 Until recently it has not been possible to easily use Python in RStudio.
 The newly-developed
@@ -1777,9 +1757,6 @@ dramatically streamline your workflow.
 
 \hypertarget{the-rstudio-ecosystem}{%
 \chapter{The RStudio Ecosystem}\label{the-rstudio-ecosystem}}
-
-\emph{by Stuart Hertzog\\
-Victoria, BC March--May 2018}
 
 \includegraphics{images/RStudio_full_logo.png}
 
@@ -2458,8 +2435,6 @@ deployment.
 
 \hypertarget{the-fundamentals-of-r}{%
 \chapter{The Fundamentals of R}\label{the-fundamentals-of-r}}
-
-author: ``by Stuart Hertzog'' date: ``March--May 2018''
 
 \hypertarget{four-fundamentals}{%
 \section{Four Fundamentals}\label{four-fundamentals}}
@@ -4592,8 +4567,6 @@ Adding a \texttt{named} index:
 
 \hypertarget{r-learning-resources}{%
 \chapter{R Learning Resources}\label{r-learning-resources}}
-
-author: ``by Stuart Hertzog'' date: ``March--May 2018''
 
 \begin{quote}
 A rich and responsive consellation of print and online information,

@@ -1,8 +1,5 @@
 # The Fundamentals of R
 
-author: "by Stuart Hertzog"
-date: "March&ndash;May 2018"
-
 ## Four Fundamentals
 
 The essence of R:
